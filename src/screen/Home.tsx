@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         </div>
         <span className={`${style["border-line"]} inline-block`} />
-        <div className={style["card-container"]}>
+        <div className={`${style["card-container"]} mt-10`}>
           <Card
             img={Card1}
             title="Informasi Kos yang Aktual"
@@ -114,7 +114,7 @@ export default function Home() {
             Kata mereka tentang SurevKos
           </h1>
           <span className={`${style["border-line"]} inline-block`} />
-          <div className="flex justify-between">
+          <div className="flex justify-between mt-10">
             <div className="w-auto inline-block">
               <div>
                 <div className={`${style["people-says__card"]} p-9`}>
