@@ -1,0 +1,73 @@
+.header {
+  height: 833px;
+  background-image: url("../assets/header-bg.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.user-app {
+  height: 340px;
+  background-image: url("../assets/user-app-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-app__content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.border-line {
+  width: 100px;
+  border-bottom: 4px solid #49beba;
+  margin: 0px auto !important;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 473px);
+  column-gap: 24px;
+}
+
+.arrow {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #ffb71b;
+}
+
+.people-says {
+  height: 689px;
+  background-color: #dcf3f2;
+  background-image: url("../assets/quote-left.svg"),
+    url("../assets/quote-right.svg");
+  background-position: 5% 90%, 95% 10%;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.people-says__card {
+  width: 585px;
+  height: 240px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.people-says__card-triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #ffffff;
+}
+
+.people-says__card__profile {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+}
+
+.quick-menu {
+  display: grid;
+  grid-template-columns: auto 240px 240px 240px;
+}

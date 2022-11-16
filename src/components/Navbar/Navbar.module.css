@@ -1,0 +1,27 @@
+.navbar {
+  background: #ffffff;
+  height: 72px;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
+  border-radius: 0px 0px 16px 16px;
+}
+
+.navbar__button {
+  background-color: #48A3FA !important;
+  color: #FFF !important;
+}
+
+.navbar__button:hover {
+  background-color: #48A3FA !important;
+  color: #FFF !important;
+}
+
+.navbar__button:active {
+  background-color: #48A3FA !important;
+  color: #FFF !important;
+}
+
+.navbar__profile-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 100%;
+}
