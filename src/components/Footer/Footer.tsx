@@ -12,7 +12,7 @@ export default function Footer() {
       style={style}
     >
       <Container className="flex justify-center items-center">
-        <p className="text-system-white">
+        <p className="text-system-white medium-1">
           © All rights reserved 2022 - Illustration by Freepik
         </p>
       </Container>

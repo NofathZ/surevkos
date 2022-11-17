@@ -15,7 +15,7 @@ export default function index({
   type?: string;
 }) {
   return (
-    <div style={{ height: "100%", minHeight: "100vh" }}>
+    <div className="overflow-hidden" style={{ height: "100%", minHeight: "100vh" }}>
       <Navbar />
       {type === "no-container" ? (
         <div className={`${style["content-height"]} ${className}`}>

@@ -30,6 +30,11 @@ module.exports = {
         'system-white': '#F3F4F6'
       }
     },
+    screens: {
+      'mobile': '0px',
+      'desktop': '961px',
+      'desktop-lg': "1120px",
+    }
   },
   plugins: [],
 }

@@ -10,7 +10,7 @@ export default function Card({
   desc: string;
 }) {
   return (
-    <div className={style["card"]}>
+    <div className={`${style["card"]} mb-4`}>
       <div className={`${style["card__img"]} w-full bg-gray-400`}>
         <img src={img} alt="img-card" className="object-cover" />
       </div>

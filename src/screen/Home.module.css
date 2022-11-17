@@ -28,6 +28,12 @@
   display: grid;
   grid-template-columns: repeat(3, 473px);
   column-gap: 24px;
+  transition: .4s;
+}
+@media screen and (max-width: 960px) {
+  .card-container {
+    grid-template-columns: auto;
+  }
 }
 
 .arrow {
@@ -38,7 +44,7 @@
 }
 
 .people-says {
-  height: 689px;
+  min-height: 689px;
   background-color: #dcf3f2;
   background-image: url("../assets/quote-left.svg"),
     url("../assets/quote-right.svg");

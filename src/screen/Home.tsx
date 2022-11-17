@@ -15,11 +15,15 @@ import Logo from "../assets/Logo.svg";
 import InstagramLogo from "../assets/instagram-logo.svg";
 import WhatsappLogo from "../assets/whatsapp-logo.svg";
 import EmailLogo from "../assets/email-logo.svg";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [carouselPosition, setCarouselPosition] = useState(0)
+
   return (
     <Layout type="no-container">
-      <header className={`${style["header"]} pt-32`}>
+      <header className={`${style["header"]} pt-32 mobile:px-4`}>
         <Container>
           <p
             className="text-system-black semibold-1 mb-4"
@@ -40,7 +44,7 @@ export default function Home() {
           <Button>Cari Kos</Button>
         </Container>
       </header>
-      <Container className="py-14 px-44">
+      <Container className="py-14 desktop:px-44 mobile:px-4">
         <h1 className="text-system-black text-center bold-3 mb-6">
           Apa itu SurevKos?
         </h1>
@@ -73,49 +77,53 @@ export default function Home() {
           </div>
         </Container>
       </div>
-      <Container className="py-14">
+      <Container className="py-14 mobile:px-4">
         <div className="flex justify-between">
           <h1 className="text-system-black bold-3 mb-6">Layanan SurevKos</h1>
-          <div className="flex">
+          <div className="desktop:flex mobile:hidden">
             <div
-              className={`${style["arrow"]} flex justify-center items-center mr-6`}
+              className={`${style["arrow"]} flex justify-center items-center cursor-pointer mr-6`}
+              onClick={() => setCarouselPosition(0)}
             >
               <img src={ArrowLeft} alt="arrow-left" width={44} height={44} />
             </div>
             <div
-              className={`${style["arrow"]} flex justify-center items-center`}
+              className={`${style["arrow"]} flex justify-center items-center cursor-pointer`}
+              onClick={() => setCarouselPosition(-26)}
             >
               <img src={ArrowRight} alt="arrow-right" width={44} height={44} />
             </div>
           </div>
         </div>
         <span className={`${style["border-line"]} inline-block`} />
-        <div className={`${style["card-container"]} mt-10`}>
-          <Card
-            img={Card1}
-            title="Informasi Kos yang Aktual"
-            desc="Dengan menggunakan SurevKos, kamu bisa mendapatkan informasi kos yang aktual. Untuk menjaga keasliannya informasi diberikan dalam bentuk video, gambar, dan juga deskripsi lengkap mengenai kos."
-          />
-          <Card
-            img={Card2}
-            title="Chat dengan Surveyer"
-            desc="Fitur chat akan membuatmu dapat terhubung secara langsung dengan surveyer kos. Kamu bahkan dapat bertanya lebih lanjut mengenai info kos yang telah diberikan kepadamu"
-          />
-          <Card
-            img={Card3}
-            title="Rating dan Komentar"
-            desc="Melihat rating dan komentar dari penghuni ataupun mantan penghuni kos agar kamu semakin yakin dalam memilih kos. Kamu juga bisa menulis pengalaman kamu selama ngekos untuk menambah info kos tersebut."
-          />
+        <div className={`mt-10 relative`} style={{ minHeight: "600px" }}>
+          <div className={`${style["card-container"]} desktop:absolute mobile:static`} style={{left: `${carouselPosition}%`}}>
+            <Card
+              img={Card1}
+              title="Informasi Kos yang Aktual"
+              desc="Dengan menggunakan SurevKos, kamu bisa mendapatkan informasi kos yang aktual. Untuk menjaga keasliannya informasi diberikan dalam bentuk video, gambar, dan juga deskripsi lengkap mengenai kos."
+            />
+            <Card
+              img={Card2}
+              title="Chat dengan Surveyer"
+              desc="Fitur chat akan membuatmu dapat terhubung secara langsung dengan surveyer kos. Kamu bahkan dapat bertanya lebih lanjut mengenai info kos yang telah diberikan kepadamu"
+            />
+            <Card
+              img={Card3}
+              title="Rating dan Komentar"
+              desc="Melihat rating dan komentar dari penghuni ataupun mantan penghuni kos agar kamu semakin yakin dalam memilih kos. Kamu juga bisa menulis pengalaman kamu selama ngekos untuk menambah info kos tersebut."
+            />
+          </div>
         </div>
       </Container>
-      <div className={`${style["people-says"]} w-full py-14`}>
+      <div className={`${style["people-says"]} w-full py-14 mobile:px-4`}>
         <Container>
           <h1 className="text-system-black bold-3 mb-6">
             Kata mereka tentang SurevKos
           </h1>
           <span className={`${style["border-line"]} inline-block`} />
-          <div className="flex justify-between mt-10">
-            <div className="w-auto inline-block">
+          <div className="flex justify-between mt-10 desktop:flex-row mobile:flex-col">
+            <div className="w-auto flex justify-center items-center flex-col mobile:mb-6">
               <div>
                 <div className={`${style["people-says__card"]} p-9`}>
                   <h3 className="text-system-black semibold-2 text-center mb-4">
@@ -143,7 +151,7 @@ export default function Home() {
                 Mahasiswa Universitas Sebelas Maret
               </p>
             </div>
-            <div className="w-auto inline-block">
+            <div className="w-auto flex justify-center items-center flex-col mobile:mb-6">
               <div>
                 <div className={`${style["people-says__card"]} p-9`}>
                   <h3 className="text-system-black semibold-2 text-center mb-4">
@@ -193,7 +201,8 @@ export default function Home() {
         <div>
           <h3 className="text-system-black medium-2 mb-6">Hubungi Kami</h3>
           <h3 className="text-system-black regular-5 mb-3 flex">
-            <img className="mr-2"
+            <img
+              className="mr-2"
               src={InstagramLogo}
               alt="instagram-logo"
               width={24}
@@ -202,7 +211,8 @@ export default function Home() {
             Instagram
           </h3>
           <h3 className="text-system-black regular-5 mb-3 flex">
-            <img className="mr-2"
+            <img
+              className="mr-2"
               src={WhatsappLogo}
               alt="whatsapp-logo"
               width={24}
@@ -211,7 +221,13 @@ export default function Home() {
             Whatsapp
           </h3>
           <h3 className="text-system-black regular-5 mb-3 flex">
-            <img className="mr-2" src={EmailLogo} alt="email-logo" width={24} height={24} />
+            <img
+              className="mr-2"
+              src={EmailLogo}
+              alt="email-logo"
+              width={24}
+              height={24}
+            />
             Email
           </h3>
         </div>
